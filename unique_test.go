@@ -8,7 +8,7 @@ import (
 
 func TestUniqueStrings(t *testing.T) {
 
-	unique := NewUnique()
+	unique := New()
 	strings := []string{"four", "one", "two", "three", "three", "four"}
 	ustrings := []interface{}{"four", "one", "two", "three"}
 	bools := []bool{true, true, true, true, false, false}
@@ -24,7 +24,7 @@ func TestUniqueStrings(t *testing.T) {
 
 func TestUniqueInts(t *testing.T) {
 
-	unique := NewUnique()
+	unique := New()
 	ints := []int{4, 1, 2, 3, 3, 4}
 	uints := []int{4, 1, 2, 3}
 	bools := []bool{true, true, true, true, false, false}
@@ -40,7 +40,7 @@ func TestUniqueInts(t *testing.T) {
 
 func TestUniqueMixed(t *testing.T) {
 
-	unique := NewUnique()
+	unique := New()
 	strings := []string{"four", "one", "two", "three", "three", "four"}
 	ustrings := []interface{}{"four", "one", "two", "three"}
 	ints := []int{4, 1, 2, 3, 3, 4}

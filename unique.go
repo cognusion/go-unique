@@ -8,8 +8,8 @@ type Unique struct {
 	cache map[interface{}]bool
 }
 
-// NewUnique returns a reference to an initialzed Unique
-func NewUnique() *Unique {
+// New returns a reference to an initialzed Unique
+func New() *Unique {
 	return &Unique{
 		cache: make(map[interface{}]bool),
 	}
