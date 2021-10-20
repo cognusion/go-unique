@@ -59,3 +59,37 @@ func TestUniqueMixed(t *testing.T) {
 		So(len(unique.Things()), ShouldEqual, len(uints)+len(ustrings))
 	})
 }
+
+func BenchmarkIsUniqueTrue(b *testing.B) {
+	unique := New()
+
+	for i := 0; i < b.N; i++ {
+		unique.IsUnique((i + 1) * b.N)
+	}
+}
+
+func BenchmarkIsUniqueFalse(b *testing.B) {
+	unique := New()
+	unique.IsUnique("blah")
+	for i := 0; i < b.N; i++ {
+		unique.IsUnique("blah")
+	}
+}
+
+/*
+func BenchmarkIsUniqueTrueM(b *testing.B) {
+	unique := NewMap()
+
+	for i := 0; i < b.N; i++ {
+		unique.IsUnique((i + 1) * b.N)
+	}
+}
+
+func BenchmarkIsUniqueFalseM(b *testing.B) {
+	unique := NewMap()
+	unique.IsUnique("blah")
+	for i := 0; i < b.N; i++ {
+		unique.IsUnique("blah")
+	}
+}
+*/
