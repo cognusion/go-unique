@@ -1,4 +1,4 @@
-// package unique provides a simple, goro-safe deduplicating cache,
+// Package unique provides a simple, goro-safe deduplicating cache,
 // using an RWMutex around a map[interface{}]bool.
 // While sync.Map is a simpler solution, it fails to perform
 // competitively unless the liklihood of duplicates is very low.
